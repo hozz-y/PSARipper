@@ -12,7 +12,7 @@ class PSAEntry:
 
     def get_ddl_parts(self, entry):
         all_parts = self.entry[1].find_all('div', class_='dropshadowboxes-container')
-        return [(part.a.text.strip(), f"https://psarips.xyz{part.a['href']}") for part in all_parts if "Download" in part.a.text]
+        return [(part.a.text.strip(), f"https://x265.club{part.a['href']}") for part in all_parts if "Download" in part.a.text]
 
     def get_ddl_urls(self):
         parts = self.get_ddl_parts(self.entry)
@@ -34,7 +34,7 @@ class PSAEntry:
         torrent = None
         for para in torrindex:
             if para.text.strip() == "TORRENT":
-                torrent = f"https://psarips.xyz{para.strong.a['href']}"
+                torrent = f"https://x265.club{para.strong.a['href']}"
         if torrent == None:
             return []
         try:
